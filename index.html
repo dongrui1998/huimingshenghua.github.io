@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>淮北慧明盛化技术服务有限公司 - 全维度分析仪器服务网</title>
+  <!-- 引入外部资源 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 配置Tailwind自定义主题 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F52BA', // 主色调：深蓝色
+            secondary: '#1E88E5', // 辅助色：中蓝色
+            accent: '#42A5F5', // 强调色：浅蓝色
+            dark: '#1A202C', // 深色文本
+            light: '#F8FAFC', // 浅色背景
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px -8px rgba(15, 82, 186, 0.18);
+      }
+      .section-padding {
+        @apply py-16 md:py-24;
+      }
+      .section-title {
+        @apply text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-dark mb-6 md:mb-10 text-center;
+      }
+      .section-subtitle {
+        @apply text-[clamp(1.1rem,2vw,1.4rem)] font-semibold text-primary mb-4 text-center text-gray-600;
+      }
+      .btn-primary {
+        @apply px-6 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2;
+      }
+      .btn-outline {
+        @apply px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary/5 transition-all duration-300;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-dark bg-light antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo区域 -->
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white">
+            <i class="fa fa-flask text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-lg md:text-xl font-bold text-primary">淮北慧明盛化</h1>
+            <p class="text-xs text-gray-500 hidden md:block">专业分析仪器服务提供商</p>
+          </div>
+        </a>
+        
+        <!-- 桌面端导航 -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">首页</a>
+          <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">关于我们</a>
+          <a href="#instruments" class="text-gray-700 hover:text-primary font-medium transition-colors">仪器设备</a>
+          <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">服务项目</a>
+          <a href="#process" class="text-gray-700 hover:text-primary font-medium transition-colors">服务流程</a>
+          <a href="#prices" class="text-gray-700 hover:text-primary font-medium transition-colors">收费标准</a>
+          <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">联系我们</a>
+        </nav>
+        
+        <!-- 联系按钮（桌面端） -->
+        <a href="#contact" class="hidden md:inline-block btn-primary">
+          <i class="fa fa-phone"></i> 立即咨询
+        </a>
+        
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-700 text-2xl">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 pointer-events-none">
+      <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+        <a href="#home" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">首页</a>
+        <a href="#about" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">关于我们</a>
+        <a href="#instruments" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">仪器设备</a>
+        <a href="#services" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">服务项目</a>
+        <a href="#process" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">服务流程</a>
+        <a href="#prices" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">收费标准</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">联系我们</a>
+        <a href="#contact" class="btn-primary w-full mt-2">
+          <i class="fa fa-phone"></i> 立即咨询
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区域 -->
+  <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-white to-blue-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 space-y-8">
+          <div class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+            专业分析 · 精准检测 · 高效服务
+          </div>
+          <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark">
+            全维度化学物质<br>
+            <span class="text-primary">分析测试服务</span>
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            淮北慧明盛化技术服务有限公司专注于核磁、质谱、色谱等高端分析仪器测试服务，为科研机构、企业单位提供精准、高效、全面的化学物质分析解决方案。
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary">
+              <i class="fa fa-envelope"></i> 联系我们
+            </a>
+            <a href="#instruments" class="btn-outline">
+              查看仪器设备
+            </a>
+          </div>
+          <!-- 信任标识 -->
+          <div class="mt-10">
+            <p class="text-sm text-gray-500 mb-4">受到众多企业与科研机构的信任</p>
+            <div class="flex flex-wrap gap-6 items-center opacity-70">
+              <span class="text-gray-600 font-medium">科研院所</span>
+              <span class="text-gray-600 font-medium">制药企业</span>
+              <span class="text-gray-600 font-medium">化工单位</span>
+              <span class="text-gray-600 font-medium">高校实验室</span>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 relative">
+          <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+            <img src="C:\Users\Administrator\Desktop\测试网站\生成正在测试的照片.png"高端分析仪器测试" class="w-full h-auto">
+          </div>
+          <!-- 装饰元素 -->
+          <div class="absolute -top-6 -right-6 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+          <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+          
+          <!-- 数据卡片 -->
+          <div class="absolute -bottom-10 left-10 bg-white p-5 rounded-xl shadow-lg z-20 max-w-xs">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <i class="fa fa-check-circle text-2xl"></i>
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section id="about" class="section-padding bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">关于慧明盛化</p>
+      <h2 class="section-title">专业的化学分析测试服务提供商</h2>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center mt-12">
+        <div class="relative">
+          <img src="C:\Users\Administrator\Desktop\测试网站\环境.jpg"公司实验室环境" class="w-full h-auto rounded-xl shadow-lg">
+          <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-md hidden md:block">
+            <div class="flex items-center gap-3">
+              <i class="fa fa-trophy text-yellow-500 text-2xl"></i>
+              <div>
+                <p class="text-sm text-gray-500">行业经验</p>
+                <p class="text-xl font-bold text-dark">6+ 年</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-dark">公司简介</h3>
+          <p class="text-gray-600 leading-relaxed">
+            淮北慧明盛化技术服务有限公司成立于2019年，是一家专注于化学物质分析测试的专业服务机构。公司拥有一支由资深分析化学家、仪器专家组成的技术团队，配备国际一流的分析测试设备，为客户提供从样品前处理到数据分析的全流程解决方案。
+          </p>
+          
+          <h3 class="text-2xl font-bold text-dark mt-8">核心优势</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+              <i class="fa fa-check-circle text-primary mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-dark">顶尖设备</h4>
+                <p class="text-sm text-gray-600">国际知名品牌分析仪器，确保数据精准</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+              <i class="fa fa-check-circle text-primary mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-dark">专业团队</h4>
+                <p class="text-sm text-gray-600">平均从业经验5年以上，技术实力雄厚</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+              <i class="fa fa-check-circle text-primary mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-dark">质量保障</h4>
+                <p class="text-sm text-gray-600">遵循ISO/IEC 17025实验室认可准则</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+              <i class="fa fa-check-circle text-primary mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-dark">高效服务</h4>
+                <p class="text-sm text-gray-600">快速响应，缩短测试周期，节省客户时间</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="#contact" class="inline-block btn-primary mt-8">
+            了解更多 <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 仪器设备展示 -->
+  <section id="instruments" class="section-padding bg-blue-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">核心设备</p>
+      <h2 class="section-title">先进的分析测试仪器</h2>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        我们引进国际顶尖品牌的分析仪器，涵盖核磁共振、质谱、色谱等多个领域，确保为客户提供精准、全面的测试数据
+      </p>
+      
+      <!-- 仪器分类标签 -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="instrument-tab active px-5 py-2 rounded-full bg-primary text-white" data-category="all">全部仪器</button>
+        <button class="instrument-tab px-5 py-2 rounded-full bg-white text-dark hover:bg-primary/10 transition-colors" data-category="nmr">核磁共振(NMR)</button>
+        <button class="instrument-tab px-5 py-2 rounded-full bg-white text-dark hover:bg-primary/10 transition-colors" data-category="ms">质谱(MS)</button>
+        <button class="instrument-tab px-5 py-2 rounded-full bg-white text-dark hover:bg-primary/10 transition-colors" data-category="chromatography">色谱</button>
+        <button class="instrument-tab px-5 py-2 rounded-full bg-white text-dark hover:bg-primary/10 transition-colors" data-category="spectroscopy">光谱</button>
+        <button class="instrument-tab px-5 py-2 rounded-full bg-white text-dark hover:bg-primary/10 transition-colors" data-category="other">其他仪器</button>
+      </div>
+      
+      <!-- 仪器卡片网格 -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 核磁共振仪器 -->
+        <div class="instrument-card card-hover bg-white rounded-xl shadow-md overflow-hidden" data-category="nmr">
+          <div class="h-52 overflow-hidden">
+            <img src="C:\Users\Administrator\Desktop\测试网站\核磁.png"600MHz核磁共振波谱仪" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-dark">600MHz核磁共振波谱仪</h3>
+              <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">高端设备</span>
+            </div>
+            <p class="text-sm text-primary">Bruker</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              超高场核磁共振波谱仪，配备低温探头，灵敏度大幅提升，适用于复杂天然产物结构解析、生物大分子研究、代谢组学分析等高端应用。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">天然产物</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">生物大分子</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">代谢组学</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 质谱仪器 -->
+        <div class="instrument-card card-hover bg-white rounded-xl shadow-md overflow-hidden" data-category="ms">
+          <div class="h-52 overflow-hidden">
+            <img src="C:\Users\Administrator\Desktop\测试网站\质谱.jpg"高分辨飞行时间质谱仪" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-dark">高分辨飞行时间质谱仪</h3>
+              <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">核心设备</span>
+            </div>
+            <p class="text-sm text-primary"></p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+             支持ESI、APCI等多种电离方式，适用于未知物结构鉴定、代谢物筛查、蛋白质组学研究等。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">未知物鉴定</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">代谢物筛查</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">蛋白质组学</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 色谱仪器 -->
+        <div class="instrument-card card-hover bg-white rounded-xl shadow-md overflow-hidden" data-category="chromatography">
+          <div class="h-52 overflow-hidden">
+            <img src="C:\Users\Administrator\Desktop\测试网站\液相.jpg"高分辨飞行时间质谱仪"高效液相色谱仪" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-dark">高效液相色谱仪</h3>
+              <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">常用设备</span>
+            </div>
+            <p class="text-sm text-primary"></p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              配备二极管阵列检测器、荧光检测器、示差折光检测器，支持反相、正相、离子交换等多种分离模式，适用于有机化合物分离纯化、纯度分析、含量测定等。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">分离纯化</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">纯度分析</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">含量测定</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 扫描电子显微镜 -->
+        <div class="instrument-card card-hover bg-white rounded-xl shadow-md overflow-hidden" data-category="chromatography">
+          <div class="h-52 overflow-hidden">
+            <img src="C:\Users\Administrator\Desktop\测试网站\SEM.jpg" alt="扫描电子显微镜(SEM)" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-dark">扫描电子显微镜</h3>
+              <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">联用设备</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              纳米级分辨率、侧重表面形貌观察，可分析固体样品（需导电处理），广泛应用于材料科学、生物医学、药物研发等领域
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">形貌观察</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">应用检测</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">组分鉴定</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- X 射线衍射仪（XRD)-->
+        <div class="instrument-card card-hover bg-white rounded-xl shadow-md overflow-hidden" data-category="spectroscopy">
+          <div class="h-52 overflow-hidden">
+            <img src="C:\Users\Administrator\Desktop\测试网站\XRD.jpg" alt="X 射线衍射仪（XRD)" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-dark">X 射线衍射仪（XRD)</h3>
+              <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">常用设备</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+            用 X 射线照射晶体材料时产生的，分析晶体结构、物相组成、结晶度等信息
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">官能团鉴定</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">结构分析</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">材料分析</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- XPS -->
+        <div class="instrument-card card-hover bg-white rounded-xl shadow-md overflow-hidden" data-category="other">
+          <div class="h-52 overflow-hidden">
+            <img src="C:\Users\Administrator\Desktop\测试网站\XPS.jpg"X 射线光电子能谱仪" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-dark">X 射线光电子能谱</h3>
+              <span class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">化学分析</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+           可检测除 H、He 外的所有元素，定量分析表面元素含量
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">元素分析</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">成分测定</span>
+              <span class="px-2 py-1 bg-blue-50 text-primary text-xs rounded">质量控制</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 查看更多按钮 -->
+      <div class="text-center mt-16">
+        <button id="loadMore" class="btn-outline">
+          加载更多仪器 <i class="fa fa-refresh ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务项目 -->
+  <section id="services" class="section-padding bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">测试服务</p>
+      <h2 class="section-title">全面的化学分析测试解决方案</h2>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        我们提供从样品前处理到数据分析的全流程服务，涵盖有机化学、无机化学、材料科学、环境科学等多个领域
+      </p>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 服务项目1 -->
+        <div class="card-hover bg-blue-50 rounded-xl p-6 shadow-sm border border-blue-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-flask text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">有机化合物结构分析</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            利用核磁共振、质谱、红外光谱等多种仪器联用技术，对有机化合物进行全面的结构解析，包括分子量测定、官能团鉴定、立体结构分析等。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>未知物结构鉴定</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>已知化合物结构确认</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>同分异构体区分</span>
+            </li>
+          </ul>
+          <a href="#contact" class="text-primary font-medium hover:text-secondary transition-colors text-sm">
+            咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+        
+        <!-- 服务项目2 -->
+        <div class="card-hover bg-blue-50 rounded-xl p-6 shadow-sm border border-blue-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-tint text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">纯度分析与杂质检测</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            采用高效液相色谱、气相色谱、核磁共振等技术，对化学物质的纯度进行精确测定，同时检测微量杂质，满足科研和工业生产的质量控制需求。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>主成分含量测定</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>有关物质检测</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>残留溶剂检测</span>
+            </li>
+          </ul>
+          <a href="#contact" class="text-primary font-medium hover:text-secondary transition-colors text-sm">
+            咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+        
+        <!-- 服务项目3 -->
+        <div class="card-hover bg-blue-50 rounded-xl p-6 shadow-sm border border-blue-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-area-chart text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">定量分析服务</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            建立科学的定量分析方法，采用外标法、内标法等多种定量策略，对样品中的目标化合物进行准确测定，广泛应用于药物研发、环境监测、食品检测等领域。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>标准曲线建立</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>样品定量测定</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>方法学验证</span>
+            </li>
+          </ul>
+          <a href="#contact" class="text-primary font-medium hover:text-secondary transition-colors text-sm">
+            咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+        
+        <!-- 服务项目4 -->
+        <div class="card-hover bg-blue-50 rounded-xl p-6 shadow-sm border border-blue-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-leaf text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">天然产物分析</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            针对植物提取物、中药、微生物代谢产物等天然产物，提供成分分离、结构鉴定、含量测定等一站式服务，助力天然药物研发和功能性食品开发。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>活性成分鉴定</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>指纹图谱建立</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>有效成分含量测定</span>
+            </li>
+          </ul>
+          <a href="#contact" class="text-primary font-medium hover:text-secondary transition-colors text-sm">
+            咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+        
+        <!-- 服务项目5 -->
+        <div class="card-hover bg-blue-50 rounded-xl p-6 shadow-sm border border-blue-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-microscope text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">材料表征服务</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            提供高分子材料、纳米材料、金属材料等各类材料的全面表征服务，包括化学组成、微观结构、物理性能等方面的分析测试。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>扫描电镜SEM测试</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>透射电镜TEM测试</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>粉末衍射XRD测试</span>
+            </li>
+          </ul>
+          <a href="#contact" class="text-primary font-medium hover:text-secondary transition-colors text-sm">
+            咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+        
+        <!-- 服务项目6 -->
+        <div class="card-hover bg-blue-50 rounded-xl p-6 shadow-sm border border-blue-100">
+          <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-cog text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-4">定制化测试服务</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-6">
+            根据客户的特殊需求，提供个性化的分析测试解决方案，包括方法开发、样品前处理优化、仪器联用测试等，满足各类科研和生产需求。
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>分析方法开发</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>样品前处理方法优化</span>
+            </li>
+            <li class="flex items-center text-gray-600 text-sm">
+              <i class="fa fa-check-circle text-primary mr-2"></i>
+              <span>多仪器联用测试</span>
+            </li>
+          </ul>
+          <a href="#contact" class="text-primary font-medium hover:text-secondary transition-colors text-sm">
+            咨询详情 <i class="fa fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务流程 -->
+  <section id="process" class="section-padding bg-blue-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">服务流程</p>
+      <h2 class="section-title">简单高效的测试服务流程</h2>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        我们致力于为客户提供便捷、高效的测试服务，从咨询到报告交付，全程专业服务，让您省心省力
+      </p>
+      
+      <div class="relative">
+        <!-- 流程线 -->
+        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 transform -translate-x-1/2"></div>
+        
+        <div class="space-y-16 md:space-y-0">
+          <!-- 流程步骤1 -->
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 md:pr-16 md:text-right order-2 md:order-1">
+              <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">第一步</div>
+              <h3 class="text-2xl font-bold text-dark mb-4">咨询沟通</h3>
+              <p class="text-gray-600 leading-relaxed">
+                客户通过电话、邮箱等方式联系我们，说明测试需求、样品情况、测试目的等信息，我们的技术人员为您提供专业的咨询服务和方案建议。
+              </p>
+            </div>
+            <div class="md:w-12 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-2xl relative z-10 shadow-lg">
+                1
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-16 order-3">
+              <div class="bg-white p-6 rounded-xl shadow-md hidden md:block">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-comments text-primary mr-3 text-xl"></i>
+                  <span class="font-semibold text-dark">沟通渠道</span>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-center">
+                    <i class="fa fa-phone text-primary mr-2"></i>
+                    <span>电话咨询：18856122152</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa fa-envelope text-primary mr-2"></i>
+                    <span>邮箱咨询：Hbhmshgf@163.com</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa fa-map-marker text-primary mr-2"></i>
+                    <span>现场咨询：淮北市相山区孟山路88号</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 流程步骤2 -->
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 md:pr-16 md:text-right order-2 md:order-1">
+              <div class="bg-white p-6 rounded-xl shadow-md hidden md:block">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-file-text text-primary mr-3 text-xl"></i>
+                  <span class="font-semibold text-dark">样品要求</span>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-start">
+                    <i class="fa fa-check text-primary mr-2 mt-1"></i>
+                    <span>固体样品：≥10mg（特殊情况可协商）</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check text-primary mr-2 mt-1"></i>
+                    <span>液体样品：≥0.1mL（密封包装）</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check text-primary mr-2 mt-1"></i>
+                    <span>提供样品基本信息和测试要求</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:w-12 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-2xl relative z-10 shadow-lg">
+                2
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-16 order-3">
+              <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">第二步</div>
+              <h3 class="text-2xl font-bold text-dark mb-4">样品提交</h3>
+              <p class="text-gray-600 leading-relaxed">
+                客户按照要求准备样品，填写测试申请表，通过快递或亲自送达的方式提交样品。我们收到样品后进行登记、编号、核对，并与客户确认测试细节。
+              </p>
+            </div>
+          </div>
+          
+          <!-- 流程步骤3 -->
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 md:pr-16 md:text-right order-2 md:order-1">
+              <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">第三步</div>
+              <h3 class="text-2xl font-bold text-dark mb-4">测试分析</h3>
+              <p class="text-gray-600 leading-relaxed">
+                技术人员根据测试需求选择合适的仪器和方法进行测试，严格按照操作规程进行实验，确保测试数据的准确性和可靠性。测试过程中如需调整方案，会及时与客户沟通。
+              </p>
+            </div>
+            <div class="md:w-12 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-2xl relative z-10 shadow-lg">
+                3
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-16 order-3">
+              <div class="bg-white p-6 rounded-xl shadow-md hidden md:block">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-clock-o text-primary mr-3 text-xl"></i>
+                  <span class="font-semibold text-dark">测试周期</span>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-center">
+                    <i class="fa fa-calendar text-primary mr-2"></i>
+                    <span>常规测试：3-5个工作日</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa fa-calendar text-primary mr-2"></i>
+                    <span>复杂测试：5-10个工作日</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fa fa-calendar text-primary mr-2"></i>
+                    <span>加急测试：1-2个工作日（需协商）</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 流程步骤4 -->
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 md:pr-16 md:text-right order-2 md:order-1">
+              <div class="bg-white p-6 rounded-xl shadow-md hidden md:block">
+                <div class="flex items-center mb-4">
+                  <i class="fa fa-file-pdf-o text-primary mr-3 text-xl"></i>
+                  <span class="font-semibold text-dark">报告包含</span>
+                </div>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-start">
+                    <i class="fa fa-check text-primary mr-2 mt-1"></i>
+                    <span>原始测试数据和谱图</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check text-primary mr-2 mt-1"></i>
+                    <span>详细的数据分析结果</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fa fa-check text-primary mr-2 mt-1"></i>
+                    <span>专业的结论和建议</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:w-12 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-2xl relative z-10 shadow-lg">
+                4
+              </div>
+            </div>
+            <div class="md:w-1/2 md:pl-16 order-3">
+              <div class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium mb-3">第四步</div>
+              <h3 class="text-2xl font-bold text-dark mb-4">报告交付</h3>
+              <p class="text-gray-600 leading-relaxed">
+                测试完成后，技术人员对数据进行分析处理，生成详细的测试报告，通过邮件等方式发送给客户。客户如有疑问，我们提供专业的报告解读服务和技术支持。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 收费标准 -->
+  <section id="prices" class="section-padding bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">标准测试价格体系</p>
+      <h2 class="section-title">详细测试服务价格表</h2>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+        以下为标准化测试项目公开报价，包含测试费、数据分析费、报告费，无额外隐形收费。复杂样品、特殊要求或批量测试可享受优惠，具体请联系咨询
+      </p>
+      
+      <!-- 价格表容器 -->
+      <div class="bg-blue-50 rounded-2xl shadow-sm p-6 md:p-10 max-w-7xl mx-auto overflow-x-auto">
+        <!-- 价格说明 -->
+        <div class="bg-white p-6 rounded-xl mb-12 border border-blue-100">
+          <h4 class="font-semibold text-primary text-lg mb-4 flex items-center">
+            <i class="fa fa-info-circle mr-2"></i> 价格说明
+          </h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i class="fa fa-check text-primary mt-1 mr-3"></i>
+                <span>以上价格为单个样品的标准测试费用，不含样品前处理（特殊样品前处理需额外收费）</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-primary mt-1 mr-3"></i>
+                <span>加急测试需额外支付30%-60%的加急费用（1-2个工作日交付）</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-primary mt-1 mr-3"></i>
+                <span>批量测试（10个样品以上）可享受8-9折优惠，长期合作客户可定制专属报价</span>
+              </li>
+            </ul>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i class="fa fa-check text-primary mt-1 mr-3"></i>
+                <span>复杂样品（如纯度极低、基质复杂、需要特殊方法）或特殊测试要求需另行报价</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-primary mt-1 mr-3"></i>
+                <span>测试报告包含原始数据、谱图、分析结果和结论，提供电子档（PDF格式）</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fa fa-check text-primary mt-1 mr-3"></i>
+                <span>如需纸质报告，需额外支付打印和邮寄费用</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+<!-- 统一价格表 - 基于提供的报价单 -->
+
+<!-- 独立价格模块（单独一页风格） -->
+  <section id="prices" class="section-padding bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">标准测试价格体系</p>
+      <h2 class="section-title">详细测试服务价格表</h2>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">
+        以下为标准化测试项目公开报价，包含测试费、数据分析费、报告费，无额外隐形收费。复杂样品、特殊要求或批量测试可享受优惠，具体请联系咨询
+      </p>
+      
+      <!-- 价格表容器 -->
+      <div class="bg-neutral rounded-2xl shadow-md p-8 md:p-12 max-w-6xl mx-auto">
+        <!-- 价格说明 -->
+        <div class="bg-primary/5 p-6 rounded-xl mb-10">
+          <h4 class="font-semibold text-primary text-lg mb-3 flex items-center">
+            <i class="fa fa-info-circle mr-2"></i> 价格说明
+          </h4>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fa fa-check text-primary mt-1 mr-3"></i>
+              <span>以上价格为单个样品的标准测试费用，不含样品前处理（特殊样品前处理需额外收费）</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check text-primary mt-1 mr-3"></i>
+              <span>加急测试需额外支付30%-60%的加急费用（1-2个工作日交付）</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check text-primary mt-1 mr-3"></i>
+              <span>批量测试（10个样品以上）可享受8-9折优惠，长期合作客户可定制专属报价</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check text-primary mt-1 mr-3"></i>
+              <span>复杂样品（如纯度极低、基质复杂、需要特殊方法）或特殊测试要求需另行报价</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-check text-primary mt-1 mr-3"></i>
+              <span>测试报告包含原始数据、谱图、分析结果和结论，提供电子档（PDF格式），纸质报告需额外支付打印和邮寄费用</span>
+            </li>
+          </ul>
+        </div>
+        
+<!-- 原网页其他所有内容保持不变，仅替换价格区域为以下表格 -->
+<div class="price-area" style="text-align: center; margin: 10px 0;"> <!-- 容器添加居中对齐，上下留少量间距 -->
+  <table border="1" cellpadding="5" cellspacing="0" style="margin: 0 auto;"> <!-- 表格添加自动居中margin -->
+    <thead>
+      <tr>
+        <th>服务项目</th> <!-- 修正原代码中多余的"<"符号（原<<th>） -->
+        <th>单价(元)</th> <!-- 同上，修正语法错误 -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>扫描电镜SEM测试</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>透射电镜TEM测试</td>
+        <td>300</td>
+      </tr>
+      <tr>
+        <td>粉末衍射XRD测试</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>电子能谱XPS测试</td>
+        <td>100+</td>
+      </tr>
+      <tr>
+        <td>吸附BET测试</td>
+        <td>600+</td>
+      </tr>
+      <tr>
+        <td>核磁氢谱</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>核磁碳谱</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>二维氢谱</td>
+        <td>150+</td>
+      </tr>
+      <tr>
+        <td>二维碳谱</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td>高分辨质谱</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>红外</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>荧光XRF测试</td>
+        <td>260+</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- 原网页其他所有内容保持不变 -->
+
+  <!-- 联系我们 -->
+    <section id="contact" class="section-padding bg-blue-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle">联系我们</p>
+      <h2 class="section-title">随时为您提供专业的咨询服务</h2>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        无论您有任何疑问或需求，都可以通过以下方式联系我们，我们将竭诚为您服务
+      </p>
+      
+<div class="grid md:grid-cols-2 gap-12">
+    <thead>
+    <thead>
+        <div class="space-y-8">
+          <div class="bg-white p-8 rounded-xl shadow-md border border-blue-100">
+            <h3 class="text-2xl font-bold text-dark mb-6">联系方式</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <i class="fa fa-map-marker text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-dark mb-1">公司地址</h4>
+                  <p class="text-gray-600">安徽省淮北市相山区孟山路88号科技大厦12层</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <i class="fa fa-phone text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-dark mb-1">联系电话</h4>
+                  <p class="text-gray-600">18856122152（王经理）</p>
+                  <p class="text-gray-600 mt-1">0561-3058886（办公室）</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <i class="fa fa-envelope text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-dark mb-1">电子邮箱</h4>
+                  <p class="text-gray-600">Hbhmshgf@163.com</p>
+                  <p class="text-gray-600 mt-1">328654789@qq.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <i class="fa fa-clock-o text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-dark mb-1">工作时间</h4>
+                  <p class="text-gray-600">周一至周五：9:00 - 18:00</p>
+                  <p class="text-gray-600 mt-1">周六：9:00 - 12:00（节假日除外）</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-8 rounded-xl shadow-md border border-blue-100">
+            <h3 class="text-xl font-bold text-dark mb-4">微信咨询</h3>
+            <p class="text-gray-600 mb-6">扫描下方二维码，添加微信进行咨询</p>
+            <div class="w-48 h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+              <span class="text-gray-400 text-sm">微信二维码</span>
+            </div>
+          </div>
+        </div>
